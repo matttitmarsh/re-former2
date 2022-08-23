@@ -21,12 +21,22 @@
   <%# <input type="submit" value="Submit"> %>
 <%# </form> %>
 
-<%= form_tag('/users', method: "post") do %>
-  <%= label_tag(:username, 'username') %>
-  <%= text_field_tag(:username) %><br><br>
-  <%= label_tag(:email, 'email') %>
-  <%= text_field_tag(:email) %><br><br>
-  <%= label_tag(:password, 'password') %>
-  <%= password_field_tag(:password) %><br><br>
-  <%= submit_tag('Submit') %>
+<%# <%= form_tag('/users', method: "post") do %>
+  <%# <%= label_tag(:username, 'username') %>
+  <%# <%= text_field_tag(:username) %>
+  <%# <%= label_tag(:email, 'email') %>
+  <%# <%= text_field_tag(:email) %>
+  <%# <%= label_tag(:password, 'password') %>
+  <%# <%= password_field_tag(:password) %>
+  <%# <%= submit_tag('Submit') %>
+<%# <% end %>
+
+<%= form_with model: @user do |form| %>
+  <%= form.label "Enter a unique Username:" %><br>
+  <%= form.text_field(:username, placeholder: 'username') %><br><br>
+  <%= form.label(:email) %><br>
+  <%= form.text_field(:email, placeholder: 'username@example.com') %><br><br>
+  <%= form.label(:password) %><br>
+  <%= form.password_field(:password, placeholder: 'password@123') %><br><br>
+  <%= form.submit('Submit') %>
 <% end %>
