@@ -31,12 +31,14 @@
   <%# <%= submit_tag('Submit') %>
 <%# <% end %>
 
-<%= form_with model: @user do |form| %>
-  <%= form.label "Enter a unique Username:" %><br>
-  <%= form.text_field(:username, placeholder: 'username') %><br><br>
-  <%= form.label(:email) %><br>
-  <%= form.text_field(:email, placeholder: 'username@example.com') %><br><br>
-  <%= form.label(:password) %><br>
-  <%= form.password_field(:password, placeholder: 'password@123') %><br><br>
-  <%= form.submit('Submit') %>
-<% end %>
+<%# <%= form_with model: @user do |form| %>
+  <%# <%= form.label "Enter a unique Username:" %>
+  <%# <%= form.text_field(:username, placeholder: 'username') %>
+  <%# <%= form.label(:email) %>
+  <%# <%= form.text_field(:email, placeholder: 'username@example.com') %>
+  <%# <%= form.label(:password) %>
+  <%# <%= form.password_field(:password, placeholder: 'password@123') %>
+  <%# <%= form.submit('Submit') %>
+<%# <% end %>
+
+<%= render partial: 'user', locals: {user: @user }%>
